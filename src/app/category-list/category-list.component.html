@@ -1,0 +1,13 @@
+<p> Check out some discussions in one of our below categories! </p>
+<div *ngFor="let category of childCategoryList">
+  <h4>{{category.name}}</h4>
+</div>
+
+<hr>
+<div class="new-category">
+  <h4>Create New Category</h4>
+  <form class="inline">
+    <input class="form-control" #newName placeholder="Enter Category Title">
+    <input class="form-control" #newDescription placeholder="Enter Description">
+  </form>
+</div>
