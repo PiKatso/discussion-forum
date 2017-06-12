@@ -3,6 +3,6 @@ export class Category {
       public name: string,
       public description: string,
       // public posts: number
-      // categoryId: number
+      public id: number
     ) {}
 }

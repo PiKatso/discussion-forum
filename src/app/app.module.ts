@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { CategoryListComponent } from './category-list/category-list.component';
+import { CategoryViewComponent } from './category-view/category-view.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CategoryListComponent } from './category-list/category-list.component';
     WelcomeComponent,
     AboutComponent,
     CategoryListComponent,
+    CategoryViewComponent,
   ],
   imports: [
     BrowserModule,
