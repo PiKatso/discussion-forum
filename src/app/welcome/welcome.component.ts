@@ -13,4 +13,8 @@ export class WelcomeComponent {
     new Category('Random', 'Random topics for fun'),
     new Category('Mentorship', 'ask questions and recieve answers'),
   ];
+
+  createNewCategory(newCategoryFromChild: Category) {
+    this.categoryList.push(newCategoryFromChild);
+  }
 }
