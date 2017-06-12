@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-// import { Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
+import { Category } from '../category.model';
+
 
 @Component({
   selector: 'category-view',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category-view.component.css']
 })
 export class CategoryViewComponent implements OnInit {
-  // constructor(private router: Router) {}
+  constructor(private route: ActivatedRoute, private location: Location) {}
 
-  ngOnInit() {
+ngOnInit() {
+  this.route.params.forEach((urlParameters) => {
+      this.categoryId = parseInt(urlParameters['id']);
+    });
   }
 
+  categoryId: number = null;
 }
