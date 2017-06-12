@@ -9,5 +9,6 @@
   <form class="inline">
     <input class="form-control" #newName placeholder="Enter Category Title">
     <input class="form-control" #newDescription placeholder="Enter Description">
+    <button class="btn btn-info" (click)="createNewCategory(newName.value, newDescription.value); newName.value=''; newDescription.value='';">Submit</button>
   </form>
 </div>
