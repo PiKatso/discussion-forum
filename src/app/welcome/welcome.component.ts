@@ -15,7 +15,7 @@ import { CategoryService } from '../category.service';
 export class WelcomeComponent implements OnInit {
   categories: Category[];
 
-  constructor(private router: Router, private categoryService: CategoryService) {}
+  constructor(private categoryService: CategoryService) {}
 
   ngOnInit() {
     this.categories = this.categoryService.getCategories();

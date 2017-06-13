@@ -12,15 +12,16 @@ import { CategoryService } from '../category.service';
   providers: [CategoryService]
 })
 export class CategoryViewComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private location: Location, private categoryServices: CategoryService) {}
+  categoryId: number;
+  categoryShow: Category;
+
+  constructor(private route: ActivatedRoute, private location: Location, private categoryService: CategoryService) {}
 
 ngOnInit() {
   this.route.params.forEach((urlParameters) => {
       this.categoryId = parseInt(urlParameters['id']);
     });
+    this.categoryShow =this.categoryService.getCategoryById(this.categoryId);
 
-    // this.category = this.categoryService.getCategories();
   }
-
-  categoryId: number = null;
 }

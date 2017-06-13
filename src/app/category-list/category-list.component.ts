@@ -16,16 +16,12 @@ export class CategoryListComponent implements OnInit {
  @Input() childCategoryList: Category[];
  @Output() newCategorySender = new EventEmitter();
 
- categories: Category[];
 
-
-
- constructor(private router: Router, private categoryService: CategoryService) {}
+ constructor(private router: Router) {}
 
  createNewCategory(name: string, description: string, id: number) {
    var newCategory: Category = new Category(name, description, id);
    this.newCategorySender.emit(newCategory);
-   console.log(newCategory);
  }
 
   goToCategory(clickedCategory: Category) {
@@ -33,7 +29,6 @@ export class CategoryListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.categories = this.categoryService.getCategories();
   }
 
 }
