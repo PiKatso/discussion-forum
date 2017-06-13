@@ -1,14 +1,16 @@
 <p> Check out some discussions in one of our below categories! </p>
-<div *ngFor="let category of childCategoryList">
-  <h4><a (click)="goToCategory(category)"> {{category.name}}</a></h4>
+<div class="panel panel-primary" *ngFor="let category of childCategoryList" (click)="goToCategory(category)">
+  <div class="panel-body">
+    <h4>{{category.name}}</h4>
+  </div>
 </div>
 
 <hr>
 <div class="new-category">
-  <h4>Create New Category</h4>
+  <h4>Create New Category:</h4><br>
   <form class="inline">
-    <input class="form-control" #newName placeholder="Enter Category Title">
-    <input class="form-control" #newDescription placeholder="Enter Description">
+    <input class="form-control" #newName placeholder="Enter Category Title"><br>
+    <input class="form-control" #newDescription placeholder="Enter Description"><br>
     <button class="btn btn-info" (click)="createNewCategory(newName.value, newDescription.value); newName.value=''; newDescription.value='';">Submit</button>
   </form>
 </div>

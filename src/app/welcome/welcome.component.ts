@@ -1,20 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../category.model';
+import { Router } from '@angular/router';
+import { CATEGORIES } from '../mock-category';
+import { CategoryService } from '../category.service';
+
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  styleUrls: ['./welcome.component.css'],
+  providers: [CategoryService]
 })
 
-export class WelcomeComponent {
-  categoryList: Category[] = [
-    new Category('Dev Tips', 'Follow along with all the latest dev tips here', 1),
-    new Category('Random', 'Random topics for fun', 2),
-    new Category('Mentorship', 'ask questions and recieve answers', 3),
-  ];
+export class WelcomeComponent implements OnInit {
+  categories: Category[];
+
+  constructor(private router: Router, private categoryService: CategoryService) {}
+
+  ngOnInit() {
+    this.categories = this.categoryService.getCategories();
+  }
 
   createNewCategory(newCategoryFromChild: Category) {
-    this.categoryList.push(newCategoryFromChild);
+    this.categories.push(newCategoryFromChild);
   }
 }
